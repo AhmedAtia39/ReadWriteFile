@@ -16,6 +16,7 @@ public class MainActivity extends AppCompatActivity {
     static EditText edit_fileName, edit_textToSave;
 
     ReadWriteFile readWriteFile;
+    Notification notification;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -27,6 +28,7 @@ public class MainActivity extends AppCompatActivity {
         edit_textToSave = (EditText) findViewById(R.id.edit_textToSave);
 
         readWriteFile = new ReadWriteFile(this);
+        notification = new Notification(this);
     }
 
     public void click_read(View view) {
@@ -76,6 +78,7 @@ public class MainActivity extends AppCompatActivity {
 
     private void write() {
         readWriteFile.write();
+        notification.myNotification();
     }
 
 }
